@@ -416,7 +416,7 @@ console.log(newArray);
 
 //5. Вывести каждый елемент массива у которого соседний справа элемент - парный
 let array = [7, 34, 5, 0, 43, 2, 5, 40, 3, 9];
-for(i = 0; i < array.length; i++) {
+for(i = 0; i < array.length - 1; i++) {
     if(array[i + 1] % 2 == 0) {
         console.log(array[i]);
     }
