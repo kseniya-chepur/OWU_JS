@@ -1,4 +1,4 @@
-//--Завантажити з мережі будь-який шаблон сайту. 
+//--Завантажити з мережі будь-який шаблон сайту (index_MedLab.html)
 //Підключити до нього свій скріпт-файл. У файлі прописати наступні доступи та дії
 let listOfClass = document.querySelectorAll('[class]');
 for (let item of listOfClass) {
