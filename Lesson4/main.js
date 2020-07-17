@@ -188,20 +188,20 @@ let cars =[
      {model: 'hyundai', year: 2018, power: 167, color: 'silver'},
      {model: 'bentli', year: 2013, power: 300, color: 'yellow'}];
      
-function CreateBlockForCar (arr, id) {
+function сreateBlockForCar (arr, id) {
     for(let car of cars) {
         let block = document.createElement('div');
         block.innerText = `${car.model} ${car.power} ${car.color}`;
         document.getElementById(id).appendChild(block);
     }
 }
-CreateBlockForCar(cars, 'car-parking');
+сreateBlockForCar(cars, 'car-parking');
 
 //- приймає масив автомобілів (можна взяти з попередніх дз ),та  індентифікатор елемнту в який потрібно додати список цих автомобілів.
 //Для кожного автомобіля створити свій блок, та додати його в елемент, індентифікатор якого ви отримали.
 //Для кожної властивості створити всередені блока автомоблія свій блок
 
-function CreateBlockForCar1 (arr, id) {
+function сreateBlockForCar1 (arr, id) {
     for(let car of cars) {
         let outerBlock = document.createElement('div');
         for(let item in car) {
@@ -212,7 +212,7 @@ function CreateBlockForCar1 (arr, id) {
         document.getElementById(id).appendChild(outerBlock);
     }
 }
-CreateBlockForCar1(cars, 'car-parking');
+сreateBlockForCar1(cars, 'car-parking');
 
 //**- функція приймає 2 масиви з рівною кількістю об'єктів та з'єднює в один об'єкт користувача та місто з відповідними "id" та "user_id",
 //та повертає масив цих з'єднаних об'єктів.
