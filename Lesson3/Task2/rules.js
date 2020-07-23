@@ -10,3 +10,4 @@ for (let item of listOfh2) {
     li.innerText = `${item.innerText}`;
     nav.appendChild(li);
 }
+
