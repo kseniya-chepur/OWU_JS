@@ -250,13 +250,13 @@ class Cinderella {
 let molly = new Cinderella('Molly', 18, 35);
 let dolly = new Cinderella('Dolly', 19, 36);
 let sally = new Cinderella('Sally', 20, 35);
-let sandy = new Cinderella('Sandy', 20, 36);
-let sammy = new Cinderella('Sammy', 21, 38);
-let kelly = new Cinderella('Kelly', 22, 39);
+let sandy = new Cinderella('Sandy', 21, 36);
+let sammy = new Cinderella('Sammy', 22, 38);
+let kelly = new Cinderella('Kelly', 23, 39);
 let tammy = new Cinderella('Tammy', 25, 40);
-let emily = new Cinderella('Emily', 28, 37);
-let jessy = new Cinderella('Jessy', 27, 36);
-let katy = new Cinderella('Katy', 29, 38);
+let emily = new Cinderella('Emily', 27, 37);
+let jessy = new Cinderella('Jessy', 29, 36);
+let katy = new Cinderella('Katy', 30, 38);
 
 let arrayOfCinderella = [molly, dolly, sally, sandy, sammy, kelly, tammy, emily, jessy, katy];
 
@@ -309,12 +309,11 @@ function Prince_(name, age, sizeOfSlipper) {
     this.age = age;
     this.sizeOfSlipper = sizeOfSlipper;
     this.findHer = function(array) {
-        let she_ = array.filter(item => item.size === this.sizeOfSlipper);
-        return she_;     
+        let she_ = array.filter(item => item.footSize === this.sizeOfSlipper);
+        console.log(she_);     
     }
 }
 
-let he_ = new Prince('Arnold', 35, 40);
-console.log(he_)
+let he_ = new Prince_('Arnold', 35, 40);
 he_.findHer(arrayOfCinderella_);
 
