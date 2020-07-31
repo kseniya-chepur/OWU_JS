@@ -127,6 +127,15 @@ console.log(textBtn);
 
 textBtn.onclick = () => {
     for(let badWord of arrayofBadWords) {
-        (textInput.value === badWord) ? alert('Do not use such words!') : '';
+        (textInput.value === badWord) ? alert('Do not use bad words!') : '';
     }
+}
+
+//Потрібно перевіряти чи не містить ціле речення в собі погані слова.
+//Кинути алерт з попередженням у випадку якщо містить.
+//Перевірку робити при натисканні на кнопку
+textBtn.onclick = () => {
+    for(let badWord of arrayofBadWords) {
+         textInput.value.includes(badWord) ? alert('Stop using bad words!') : '';
+    }    
 }
