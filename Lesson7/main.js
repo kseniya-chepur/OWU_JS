@@ -93,25 +93,20 @@ let form = document.forms.form;
 let trInput = form.tr;
 let tdInput = form.td;
 let valueInput = form.value;
-let d = document.getElementById('submit');
-console.log(d);
-d.onclick = () => {
-    let table1 = document.createElement('table');
- 
-    for(let i = 0; i < 4; i++) {
-        let tr1 = document.createElement('tr');
-        table1.appendChild(tr1);
-    }
-    for(let j = 0; j < 6; j++) {
-        let td1 = document.createElement('td');
-        tr1.appendChild(td1);
-    
-    }
-    document.body.appendChild(table1);
-}
+let newBtn = document.getElementById('submit');
 
-
-
+newBtn.onclick = () => {    
+    let table = document.createElement('table');
+    document.body.appendChild(table);
+        for(let i = 0; i < trInput; i++) {
+            let tr = document.createElement('tr');
+            table.appendChild(tr);
+        for(let j = 0; j < tdInput; j++) {
+            let td = document.createElement('td');
+            tr.appendChild(td);    
+            td.innerText = 'valueInput.value'; 
+        }}
+    };
 
 // - Сворити масив нецензурних слів.
 // Сворити інпут текстового типу.
@@ -120,13 +115,157 @@ d.onclick = () => {
 // Перевірку робити при натисканні на кнопку
 
 let arrayofBadWords = ['damn', 'jerk', 'shit', 'bullshit', 'nerd', 'prat', 'noob', 'shitbox'];
-let textInput = document.querySelector('#text9');
-console.log(textInput);
-let textBtn = document.querySelector('#text-submit');
-console.log(textBtn);
+let textForm = document.forms.textform;
+let textInput = textForm.text;
+let textBtn = textForm.submit;
 
 textBtn.onclick = () => {
     for(let badWord of arrayofBadWords) {
         (textInput.value === badWord) ? alert('Do not use such words!') : '';
     }
+}
+
+//Потрібно перевіряти чи не містить ціле речення в собі погані слова.
+//Кинути алерт з попередженням у випадку якщо містить.
+//Перевірку робити при натисканні на кнопку
+textBtn.onclick = () => {
+    for(let badWord of arrayofBadWords) {
+         textInput.value.includes(badWord) ? alert('Stop using bad words!') : '';
+    }    
+}
+
+
+//-- взять массив пользователей
+let usersWithAddress = [
+                {id:1,name: 'vasya', age: 31, status: false, address: {city: 'Lviv', street: 'Shevchenko', number: 16}},
+                {id:2,name: 'petya', age: 30, status: true, address: {city: 'Kyiv', street: 'Shevchenko', number: 1}},
+                {id:3,name: 'kolya', age: 29, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 121}},
+                {id:4,name: 'olya', age: 28, status: false, address: {city: 'Ternopil', street: 'Shevchenko', number: 90}},
+                {id:5,name: 'max', age: 30, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 115}},
+                {id:6,name: 'anya', age: 31, status: false, address: {city: 'Kyiv', street: 'Shevchenko', number: 2}},
+                {id:7,name: 'oleg', age: 28, status: false, address: {city: 'Ternopil', street: 'Shevchenko', number: 22}},
+                {id:8,name: 'andrey', age: 29, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 43}},
+                {id:9,name: 'masha', age: 30, status: true, address: {city: 'Kyiv', street: 'Shevchenko', number: 12}},
+                {id:10,name: 'olya', age: 31, status: false, address: {city: 'Lviv', street: 'Shevchenko', number: 16}},
+                {id:11,name: 'max', age: 31, status: true, address: {city: 'Ternopil', street: 'Shevchenko', number: 121}}
+            ];
+// Создать три чекбокса. Каждый из них активирует фильтр для вышеуказаного массива. Фильтры могут работать как вместе так и по отдельности.
+// 1й - отфильтровывает пользователей со статусом false (оставляет со статусом false)
+// 2й - оставляет старше 29 лет включительно
+// 3й - оставляет тех у кого город киев
+// Данные выводить в документ
+
+let usersForm = document.forms.users;
+let firstCheck = usersForm.check1;
+let secondCheck = usersForm.check2;
+let thirdCheck = usersForm.check3;
+let block = document.getElementsByClassName('block')[0];
+
+for(let user of usersWithAddress) {
+    let div = document.createElement('div');
+    div.innerText = `${user.id} ${user.name} ${user.age} ${user.status} ${user.address.city} ${user.address.street} ${user.address.number}`;
+    block.appendChild(div);
+}
+
+firstCheck.onclick = () => {
+    block.innerText = '';
+    if(firstCheck.checked) {
+        for (let user of usersWithAddress) {
+            if(!user.status) {
+                let div = document.createElement('div');
+                div.innerText = `${user.id} ${user.name} ${user.age} ${user.status} ${user.address.city} ${user.address.street} ${user.address.number}`;
+                block.appendChild(div);
+            }
+        } 
+    } else {
+        for(let user of usersWithAddress) {
+            let div = document.createElement('div');
+            div.innerText = `${user.id} ${user.name} ${user.age} ${user.status} ${user.address.city} ${user.address.street} ${user.address.number}`;
+            block.appendChild(div);
+        }
+    }
+}
+
+secondCheck.onclick = () => {
+    block.innerText = '';
+    if(secondCheck.checked) {
+        for(let user of usersWithAddress) {
+            if(user.age >= 29)  {
+                let div = document.createElement('div');
+                div.innerText = `${user.id} ${user.name} ${user.age} ${user.status} ${user.address.city} ${user.address.street} ${user.address.number}`;
+                block.appendChild(div);
+            }
+        }
+    } else {
+        for(let user of usersWithAddress) {
+            let div = document.createElement('div');
+            div.innerText = `${user.id} ${user.name} ${user.age} ${user.status} ${user.address.city} ${user.address.street} ${user.address.number}`;
+            block.appendChild(div);
+        }
+    }
+}
+
+thirdCheck.onclick = () => {
+    block.innerText = '';
+    if(thirdCheck.checked) {
+        for(let user of usersWithAddress) {
+            if(user.address.city === 'Kyiv') {
+                let div = document.createElement('div');
+                div.innerText = `${user.id} ${user.name} ${user.age} ${user.status} ${user.address.city} ${user.address.street} ${user.address.number}`;
+                block.appendChild(div);
+            }
+        }
+    } else {
+        for(let user of usersWithAddress) {
+            let div = document.createElement('div');
+            div.innerText = `${user.id} ${user.name} ${user.age} ${user.status} ${user.address.city} ${user.address.street} ${user.address.number}`;
+            block.appendChild(div);
+        }
+    }
+}
+
+//- Напишите «Карусель» – ленту изображений, которую можно листать влево-вправо нажатием на стрелочки.
+let arrOfImages = [
+    {id: 1, url: 'https://www.weathernationtv.com/app/uploads/2019/06/summer.jpg'},
+    {id: 2, url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ-VJwUXgRt5sfHvt1FWJOCpGE0xhWbHn3FEw&usqp=CAU'},
+    {id: 3, url: 'https://www.medihelp.ro/public/posts/0/198/sfaturi-vara-sanatoasa.jpg'},
+    {id: 4, url: 'https://lh3.googleusercontent.com/proxy/BXR2oA8MRx6l4cPoiULItb51C2BQ8CS0SBkiVfkerxmQV-J0neTmEoGCMLA9er8tx7VHc5OO98SgXHXatk-ZYUMxjNTO7UEvBdqKedCJTzzPm_ZgZT4'},
+    {id: 5, url: 'https://www.almanac.com/sites/default/files/styles/opengraph/public/image_nodes/summer-sunset.jpg?itok=MAwMYC0o'}
+];
+
+let img = document.createElement('img');
+let leftButton = document.createElement('button');
+leftButton.innerText = 'left';
+let rightButton = document.createElement('button');
+rightButton.innerText = 'right';
+document.body.appendChild(img);
+img.width = '500';
+let id = 0;
+img.src = arrOfImages[id].url;
+document.body.appendChild(leftButton);
+document.body.appendChild(rightButton);
+
+leftButton.onclick = () => {
+    if(id - 1 < 0) {
+        id = arrOfImages.length - 1;
+    } else {
+        id -= 1;
+    }
+    img.src = arrOfImages[id].url;
+}
+
+rightButton.onclick = () => {
+    if(id + 1 > arrOfImages.length - 1) {
+        id = 0;
+    } else {
+        id += 1;
+    }
+    img.src = arrOfImages[id].url;
+}
+        
+//*** При виділені сегменту тексту на сторінці він стає жирний/курсивний/або якось іншим способом змінює свій стан
+let changeText = document.querySelector('#select');
+changeText.onselect = () => {
+    changeText.style.fontSize = '20px';
+    changeText.style.color = 'red';
 }
