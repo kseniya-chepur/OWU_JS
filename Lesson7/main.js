@@ -268,5 +268,4 @@ changeText.onselect = () => {
     changeText.style.fontSize = '20px';
     changeText.style.color = 'red';
 }
-=======
->>>>>>> d840a09208afb18d3bd0b20206c5be023aa8a0bf
+
