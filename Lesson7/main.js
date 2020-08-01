@@ -133,8 +133,6 @@ textBtn.onclick = () => {
          textInput.value.includes(badWord) ? alert('Stop using bad words!') : '';
     }    
 }
-<<<<<<< HEAD
-
 
 //-- взять массив пользователей
 let usersWithAddress = [
