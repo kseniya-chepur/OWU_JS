@@ -121,7 +121,7 @@ let textBtn = textForm.submit;
 
 textBtn.onclick = () => {
     for(let badWord of arrayofBadWords) {
-        (textInput.value === badWord) ? alert('Do not use such words!') : '';
+        (textInput.value === badWord) ? alert('Do not use bad words!') : '';
     }
 }
 
@@ -133,6 +133,7 @@ textBtn.onclick = () => {
          textInput.value.includes(badWord) ? alert('Stop using bad words!') : '';
     }    
 }
+<<<<<<< HEAD
 
 
 //-- взять массив пользователей
@@ -269,3 +270,5 @@ changeText.onselect = () => {
     changeText.style.fontSize = '20px';
     changeText.style.color = 'red';
 }
+=======
+>>>>>>> d840a09208afb18d3bd0b20206c5be023aa8a0bf
