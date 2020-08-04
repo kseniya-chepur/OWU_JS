@@ -2,7 +2,116 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"><!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lesson 7</title>
+        <style>
+            .hidden {
+                display: none;
+            }
+            .task {
+                font-style: italic;
+                color: blue;
+            }
+        </style>
+    </head>
+    <body>
+        <p class="task">
+            Создать произвольный елемент с id = text. 
+            Используя JavaScript, сделайте так, чтобы при клике на кнопку исчезал элемент с id="text".
+        </p>
+        <div>
+            <p id="text">
+                Affronting everything discretion men now own did. Still round match we to. Frankness pronounce daughters remainder extensive has but. Happiness cordially one determine concluded fat. Plenty season beyond by hardly giving of. Consulted or acuteness dejection an smallness if. Outward general passage another as it. Very his are come man walk one next. Delighted prevailed supported too not remainder perpetual who furnished. Nay affronting bed projection compliment instrument.
+            </p> 
+            <button id="text-btn">Button for text block</button>
+        </div>
+        <p class="task">
+            Создайте кнопку, при клике на которую, она будет скрывать сама себя.
+        </p>
+        <div class="block"></div>        
+        <p class="task">
+            Створити інпут який приймає вік людини та кнопку яка підтверджує дію.
+            При натисканні на кнопку зчитати інформацію з інпуту та перевірити вік чи меньше він ніж 18, та повідомити про це користувача.
+        </p>
+        <form>
+            <input type="number" id="age" min="1" max="100">
+            <button type="submit" id="age-submit">Submit</button>
+        </form>
+        <p class="task">
+            Создайте меню, которое раскрывается/сворачивается при клике
+        </p>
+        <h1>Menu</h1>    
+        <ul id="menu">
+            <li>Link 1</li>
+            <li>Link 2</li>
+        </ul>
+        <p class="task">
+            Создать список комментариев. Вывести список комментариев в документ, каждый в своем блоке.            
+            Добавьте каждому комментарию по кнопке для сворачивания его body.
+        </p>
+        <div class="block"></div>
+        <p class="task">
+             Створити 2 форми  по 2 інпути в кожній. 
+             Створити кнопку при кліку на яку зчитується та виводиться на консоль інформація з цих 2х форм.
+             Кнопка повинна лежати за межами форм (Щоб уникнути  перезавантаження сторінки)
+             Доступ до інпутів через Forms API. Отже дайте формі та інпутам всі необхідні атрибути.
+        </p>
+        <div class="block"></div>
+        <form id="form1">
+            <input type="checkbox" name="check" checked>
+            <input type="checkbox" name="check">
+        </form>        
+        <form id="form2">        
+            <input type="radio" name="radio" checked> 
+            <input type="radio" name="radio">
+        </form>
+        <div id="container"></div>
+        <p class="task">
+            Створити 3 инпута та кнопку. Один визначає кількість рядків, другий - кількість ячеєк, третій вмиіст ячеєк.
+            При натисканні кнопки, вся ця інформація зчитується і формується табличка, з відповідним вмістом.
+        </p>
+        <form id="form">
+            <input type="number" name="tr">
+            <input type="number" name="td">
+            <input type="text" name="value">
+            <button type="submit" id="submit">Submit</button>
+        </form>
+        <p class="task">
+            Сворити масив нецензурних слів.
+            Сворити інпут текстового типу.
+            Якщо людина вводить слово і воно міститься в масиві не цензурних слів - кинути алерт з попередженням.
+            Перевірку робити при натисканні на кнопку.
+            Потрібно перевіряти чи не містить ціле речення в собі погані слова.
+        </p>
+        <form id="textform">
+            <input type="text" name="text"> 
+            <button type="submit" name="submit">For text input</button>
+        </form>
+        <p class="task">
+            Взять массив пользователей
+            Создать три чекбокса. Каждый из них активирует фильтр для вышеуказаного массива. Фильтры могут работать как вместе так и по отдельности.
+            1й - отфильтровывает пользователей со статусом false (оставляет со статусом false)
+            2й - оставляет старше 29 лет включительно
+            3й - оставляет тех у кого город киев
+             Данные выводить в документ
+        </p>
+        <form id="users"> 
+            <input type="checkbox" name="check1">
+            <input type="checkbox" name="check2">
+            <input type="checkbox" name="check3">
+        </form>
+        <div class="block"></div>
+        <p class="task">
+            Напишите «Карусель» – ленту изображений, которую можно листать влево-вправо нажатием на стрелочки.
+        </p>
+        <div class="block"></div>
+        <script src="main.js"></script>  
+    </body>
+</html>
         <title>Lesson 7</title>
         <style>
             .hidden {
