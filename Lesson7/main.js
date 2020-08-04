@@ -104,7 +104,7 @@ let newBtn = document.getElementById('submit');
 newBtn.onclick = (e) => {    
     e.preventDefault();
     let table = document.createElement('table');
-    document.body.appendChild(table);
+    container1.appendChild(table);
         for(let i = 0; i < trInput.value; i++) {
             let tr = document.createElement('tr');
             table.appendChild(tr);
