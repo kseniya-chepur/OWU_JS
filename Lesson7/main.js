@@ -8,10 +8,11 @@ textButton.onclick = () => {
 
 //- Создайте кнопку, при клике на которую, она будет скрывать сама себя.
 let btn = document.createElement('button');
-document.body.appendChild(btn);
+let block1 = document.getElementsByClassName('block')[0];
+block1.appendChild(btn);
 btn.textContent = 'press here to hide the button';
 btn.onclick = () => {
-    btn.style.display = 'none';
+    btn.style.display = 'none';    
 }
 
 //- створити інпут який приймає вік людини та кнопку яка підтверджує дію.
@@ -19,7 +20,7 @@ btn.onclick = () => {
 let ageInput = document.querySelector('#age');
 let ageButton = document.querySelector('#age-submit');
 
-ageButton.onclick = () => {
+ageButton.onclick = (e) => {
     (ageInput.value < 18) ? alert('You are less than 18!') : '';
 }
 
@@ -32,19 +33,21 @@ h1.onclick = () => {
 
 // - Создать список комментариев , пример объекта комментария - {title : 'lorem', body:'lorem ipsum dolo sit ameti'}.
 // Вывести список комментариев в документ, каждый в своем блоке.
-//  Добавьте каждому комментарию по кнопке для сворачивания его body.
+// Добавьте каждому комментарию по кнопке для сворачивания его body.
 let commentArray = [
     {title : 'firstComment', body:'information for the first comment'},
     {title : 'secondComment', body:'information for the second comment'},
     {title : 'thirdComment', body:'information for the third comment'}
 ];
+
+let block2 = document.getElementsByClassName('block')[1];
 for(let comment of commentArray) {
     let commentDiv = document.createElement('div');
-    commentDiv.innerText = `${comment.body}`;
+    commentDiv.innerText = `${comment.body}`;    
     let commentBtn = document.createElement('button');
     commentBtn.innerText = `${comment.title}`;
-    document.body.appendChild(commentDiv);
-    document.body.appendChild(commentBtn);
+    block2.appendChild(commentDiv);
+    block2.appendChild(commentBtn);    
     commentBtn.addEventListener('click', () => {
     commentDiv.classList.toggle('hidden');
 }); 
@@ -55,13 +58,15 @@ for(let comment of commentArray) {
 // Доступ до інпутів через Forms API. Отже дайте формі та інпутам всі необхідні атрибути.
 
 let button = document.createElement('button');
-document.body.appendChild(button);
-button.innerText = 'BUTTON';
+let block3 = document.getElementsByClassName('block')[2];
 
 let form1 = document.forms.form1;
 let input1 = form1.check;
 let form2 = document.forms.form2;
 let input2 = form2.radio;
+
+block3.appendChild(button);
+button.innerText = 'BUTTON';
 
 button.onclick = () => {
     console.log(input1);
@@ -95,13 +100,14 @@ let tdInput = form.td;
 let valueInput = form.value;
 let newBtn = document.getElementById('submit');
 
-newBtn.onclick = () => {    
+newBtn.onclick = (e) => {    
+    e.preventDefault();
     let table = document.createElement('table');
     document.body.appendChild(table);
-        for(let i = 0; i < trInput; i++) {
+        for(let i = 0; i < trInput.value; i++) {
             let tr = document.createElement('tr');
             table.appendChild(tr);
-        for(let j = 0; j < tdInput; j++) {
+        for(let j = 0; j < tdInput.value; j++) {
             let td = document.createElement('td');
             tr.appendChild(td);    
             td.innerText = 'valueInput.value'; 
@@ -133,8 +139,6 @@ textBtn.onclick = () => {
          textInput.value.includes(badWord) ? alert('Stop using bad words!') : '';
     }    
 }
-<<<<<<< HEAD
-
 
 //-- взять массив пользователей
 let usersWithAddress = [
@@ -160,7 +164,7 @@ let usersForm = document.forms.users;
 let firstCheck = usersForm.check1;
 let secondCheck = usersForm.check2;
 let thirdCheck = usersForm.check3;
-let block = document.getElementsByClassName('block')[0];
+let block = document.getElementsByClassName('block')[3];
 
 for(let user of usersWithAddress) {
     let div = document.createElement('div');
@@ -230,7 +234,7 @@ let arrOfImages = [
     {id: 1, url: 'https://www.weathernationtv.com/app/uploads/2019/06/summer.jpg'},
     {id: 2, url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ-VJwUXgRt5sfHvt1FWJOCpGE0xhWbHn3FEw&usqp=CAU'},
     {id: 3, url: 'https://www.medihelp.ro/public/posts/0/198/sfaturi-vara-sanatoasa.jpg'},
-    {id: 4, url: 'https://lh3.googleusercontent.com/proxy/BXR2oA8MRx6l4cPoiULItb51C2BQ8CS0SBkiVfkerxmQV-J0neTmEoGCMLA9er8tx7VHc5OO98SgXHXatk-ZYUMxjNTO7UEvBdqKedCJTzzPm_ZgZT4'},
+    {id: 4, url: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60'},
     {id: 5, url: 'https://www.almanac.com/sites/default/files/styles/opengraph/public/image_nodes/summer-sunset.jpg?itok=MAwMYC0o'}
 ];
 
@@ -239,12 +243,13 @@ let leftButton = document.createElement('button');
 leftButton.innerText = 'left';
 let rightButton = document.createElement('button');
 rightButton.innerText = 'right';
-document.body.appendChild(img);
+let block4 = document.getElementsByClassName('block')[4];
+block4.appendChild(img);
 img.width = '500';
 let id = 0;
 img.src = arrOfImages[id].url;
-document.body.appendChild(leftButton);
-document.body.appendChild(rightButton);
+block4.appendChild(leftButton);
+block4.appendChild(rightButton);
 
 leftButton.onclick = () => {
     if(id - 1 < 0) {
@@ -263,12 +268,3 @@ rightButton.onclick = () => {
     }
     img.src = arrOfImages[id].url;
 }
-        
-//*** При виділені сегменту тексту на сторінці він стає жирний/курсивний/або якось іншим способом змінює свій стан
-let changeText = document.querySelector('#select');
-changeText.onselect = () => {
-    changeText.style.fontSize = '20px';
-    changeText.style.color = 'red';
-}
-=======
->>>>>>> d840a09208afb18d3bd0b20206c5be023aa8a0bf
