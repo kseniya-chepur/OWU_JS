@@ -267,4 +267,16 @@ rightButton.onclick = () => {
         id += 1;
     }
     img.src = arrOfImages[id].url;
+<<<<<<< HEAD
 }
+=======
+}
+        
+//*** При виділені сегменту тексту на сторінці він стає жирний/курсивний/або якось іншим способом змінює свій стан
+let changeText = document.querySelector('#select');
+changeText.onselect = () => {
+    changeText.style.fontSize = '20px';
+    changeText.style.color = 'red';
+}
+
+>>>>>>> 6b2ae3eed46e982b6f05eacfb26ee0f09c45993c
