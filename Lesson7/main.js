@@ -111,7 +111,7 @@ newBtn.onclick = (e) => {
         for(let j = 0; j < tdInput.value; j++) {
             let td = document.createElement('td');
             tr.appendChild(td);    
-            td.innerText = 'valueInput.value'; 
+            td.innerText = valueInput.value; 
         }}
     };
 
