@@ -1,3 +1,4 @@
+
 // - Создать произвольный елемент с id = text. 
 //  Используя JavaScript, сделайте так, чтобы при клике на кнопку исчезал элемент с id="text".
 let textElement = document.querySelector('#text');
@@ -103,14 +104,18 @@ let newBtn = document.getElementById('submit');
 newBtn.onclick = (e) => {    
     e.preventDefault();
     let table = document.createElement('table');
+<<<<<<< HEAD
     document.body.appendChild(table);
+=======
+    container1.appendChild(table);
+>>>>>>> 3a8b2734bc27dca4ef75d7805ee7fbeeca219096
         for(let i = 0; i < trInput.value; i++) {
             let tr = document.createElement('tr');
             table.appendChild(tr);
         for(let j = 0; j < tdInput.value; j++) {
             let td = document.createElement('td');
             tr.appendChild(td);    
-            td.innerText = 'valueInput.value'; 
+            td.innerText = valueInput.value; 
         }}
     };
 
@@ -271,6 +276,7 @@ rightButton.onclick = () => {
 }
 =======
 }
+<<<<<<< HEAD
         
 //*** При виділені сегменту тексту на сторінці він стає жирний/курсивний/або якось іншим способом змінює свій стан
 let changeText = document.querySelector('#select');
@@ -280,3 +286,5 @@ changeText.onselect = () => {
 }
 
 >>>>>>> 6b2ae3eed46e982b6f05eacfb26ee0f09c45993c
+=======
+>>>>>>> 3a8b2734bc27dca4ef75d7805ee7fbeeca219096
